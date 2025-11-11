@@ -2,18 +2,31 @@ from random import choice, randrange
 
 
 def make_room(x, y, w, h):
-    """部屋を表すタプル (x, y, w, h) を作成する"""
+    """
+    部屋を表すタプルを返す
+    x : 部屋の左上 X 座標
+    y : 部屋の左上 Y 座標
+    w : 部屋の幅
+    h : 部屋の高さ
+    """
     return (x, y, w, h)
 
 
 def room_center(room):
-    """部屋の中心座標 (x, y) を返す"""
+    """
+    部屋の中心座標を返す
+    room : (x, y, w, h) で表される部屋
+    """
     x, y, w, h = room
     return (x + w // 2, y + h // 2)
 
 
 def is_intersect(a, b):
-    """部屋 a と部屋 b が重なっているか判定する"""
+    """
+    2つの部屋 a, b が重なっているか判定
+    a : 部屋 a; (x, y, w, h)
+    b : 部屋 b; (x, y, w, h)
+    """
     ax, ay, aw, ah = a
     bx, by, bw, bh = b
     return not (
@@ -22,7 +35,11 @@ def is_intersect(a, b):
 
 
 def carve_room(m, room):
-    """マップ m に部屋 room を掘る（床を '.' に置換）"""
+    """
+    マップに部屋を作り、マップの二次元リストを返す
+    m : 2次元文字列リスト
+    room : (x, y, w, h) で表される部屋
+    """
     x, y, w, h = room
     return [
         [
@@ -34,7 +51,12 @@ def carve_room(m, room):
 
 
 def carve_tunnel(m, x1, y1, x2, y2):
-    """座標 (x1, y1) から (x2, y2) までのL字型通路を掘る"""
+    """
+    2点間にL字型の通路を掘って、マップの二次元リストを返す
+    m : 2次元リスト
+    x1, y1 : 通路の開始座標
+    x2, y2 : 通路の終了座標
+    """
     m = [row[:] for row in m]
     if choice([True, False]):
         for x in range(min(x1, x2), max(x1, x2) + 1):
@@ -50,7 +72,15 @@ def carve_tunnel(m, x1, y1, x2, y2):
 
 
 def place_rooms(width, height, max_rooms=30, room_min=5, room_max=12, max_tries=1000):
-    """マップを初期化し、部屋をランダムに配置し、通路で接続する"""
+    """
+    マップを初期化し，部屋をランダムに配置し，通路で接続する
+    width : マップの幅
+    height : マップの高さ
+    max_rooms : 最大部屋数
+    room_min : 部屋の最小サイズ
+    room_max : 部屋の最大サイズ
+    max_tries : 配置試行回数の上限
+    """
     m = [["#" for _ in range(width)] for _ in range(height)]
     rooms = []
     tries = 0
@@ -70,15 +100,25 @@ def place_rooms(width, height, max_rooms=30, room_min=5, room_max=12, max_tries=
 
 
 def generate_dungeon(width=80, height=45, **kwargs):
-    """ダンジョンを生成してマップを返す"""
+    """
+    ダンジョンマップを生成
+    width : マップの幅
+    height : マップの高さ
+    **kwargs: place_rooms に渡す追加のパラメータ
+    """
     return place_rooms(width, height, **kwargs)
 
 
 def ascii_map(m):
-    """マップ m を文字列に変換して返す"""
+    """
+    マップをASCII文字列に変換
+    m : 2次元マップ
+    """
     return "\n".join("".join(row) for row in m)
 
 
 if __name__ == "__main__":
-    dungeon = generate_dungeon(80, 45, max_rooms=20, room_min=4, room_max=10)
+    dungeon = generate_dungeon(
+        width=80, height=45, max_rooms=20, room_min=4, room_max=10
+    )
     print(ascii_map(dungeon))
