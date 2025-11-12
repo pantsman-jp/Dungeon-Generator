@@ -119,6 +119,6 @@ def ascii_map(m):
 
 if __name__ == "__main__":
     dungeon = generate_dungeon(
-        width=80, height=45, max_rooms=20, room_min=4, room_max=10
+        width=40, height=20, max_rooms=4, room_min=1, room_max=10
     )
     print(ascii_map(dungeon))
