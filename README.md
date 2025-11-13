@@ -1,12 +1,12 @@
 # Dungeon_Generator
 
 ## Abstract
-This is a simple dungeon generator.
-It randomly places rooms within a grid and connects them using L-shaped corridors.
-Floors are represented by `.`, and walls are represented by `#`.
-The generator produces a fully connected dungeon map.
+- This is a simple dungeon generator.
+- It randomly places rooms within a grid and connects them using L-shaped corridors.
+- Floors are represented by `.`, and walls are represented by `#`.
+- The generator produces a fully connected dungeon map.  
 
-This was created based on this reference;
+This generator was created based on this reference:
 [Basic BSP Dungeon generation](https://www.roguebasin.com/index.php?title=Basic_BSP_Dungeon_generation).
 
 ### Example
@@ -46,7 +46,7 @@ git clone https://github.com/pantsman-jp/Dungeon_Generator
 ```
 
 ## Usage
-Require `Python3`.
+Require `Python3`
 
 To run,
 ```
