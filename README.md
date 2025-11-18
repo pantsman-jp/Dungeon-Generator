@@ -9,9 +9,7 @@
     - You can adjust the size of the dungeon by changing the `width` and `height`.
     - You can adjust the number of rooms by changing the value of `max_room`.
     - You can adjust the size of the rooms by changing the values of `room_min` and `room_max`.
-
-This generator was created based on this reference:
-[Basic BSP Dungeon generation](https://www.roguebasin.com/index.php?title=Basic_BSP_Dungeon_generation).
+- This generator was created based on this reference:[Basic BSP Dungeon generation](https://www.roguebasin.com/index.php?title=Basic_BSP_Dungeon_generation).
 
 ### Example
 `width=40, height=20, max_rooms=4, room_min=1, room_max=10`
