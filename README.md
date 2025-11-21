@@ -1,4 +1,4 @@
-# Dungeon_Generator
+# Dungeon-Generator
 
 ## Abstract
 - This is a simple dungeon generator.
@@ -44,7 +44,7 @@ Visualizing that.
 ## Installation
 Install via
 ```
-git clone https://github.com/pantsman-jp/Dungeon_Generator
+git clone https://github.com/pantsman-jp/Dungeon-Generator
 ```
 
 ## Usage
