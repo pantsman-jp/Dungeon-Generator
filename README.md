@@ -38,7 +38,7 @@ Output is like this.
 ########################################
 ```
 
-Visualizing that.
+Visualizing output by [Grid Editor](https://paruma.github.io/grid-editor/).
 ![sample](img/grid_sample.png)
 
 ## Installation
