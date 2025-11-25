@@ -5,10 +5,10 @@
 - It randomly places rooms within a grid and connects them with L-shaped corridors.
 - Floors are represented by a period (`.`), and walls by a hash (`#`).
 - The generator produces a fully connected dungeon map.
-- You can modify the features of the dungeon by changing the arguments of the generate_dungeon function.
-    - You can adjust the size of the dungeon by changing the `width` and `height`.
-    - You can adjust the number of rooms by changing the value of `max_room`.
-    - You can adjust the size of the rooms by changing the values of `room_min` and `room_max`.
+- You can customize the generated dungeon by adjusting the arguments of the `generate_dungeon` function:
+    - Change the overall dungeon size with `width` and `height`.
+    - Control the number of rooms with `max_room`.
+    - Adjust the size of the rooms with `room_min` and `room_max`.
 - This generator was created based on this reference : [Basic BSP Dungeon generation](https://www.roguebasin.com/index.php?title=Basic_BSP_Dungeon_generation).
 
 ### Example
